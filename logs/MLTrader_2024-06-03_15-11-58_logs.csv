@@ -1,0 +1,41 @@
+2024-06-03 15:11:58,066: root: INFO: MLTrader : Executing the initialize lifecycle method
+2024-06-03 15:11:59,270: root: INFO: Current backtesting datetime 2024-05-03 08:30:00-04:00
+2024-06-03 15:11:59,271: root: INFO: MLTrader : Executing the before_market_opens lifecycle method
+2024-06-03 15:11:59,272: root: INFO: Current backtesting datetime 2024-05-03 09:30:00-04:00
+2024-06-03 15:11:59,272: root: INFO: MLTrader : Executing the before_starting_trading lifecycle method
+2024-06-03 15:11:59,274: root: INFO: [34mMLTrader : Executing the on_trading_iteration lifecycle method at 2024-06-03 15:11:59[0m
+2024-06-03 15:11:59,274: root: WARNING: quote is not implemented for YahooData, but USD was passed as the quote
+2024-06-03 15:11:59,280: root: WARNING: quote is not implemented for YahooData, but USD was passed as the quote
+2024-06-03 15:11:59,491: root: ERROR: 'NewsV2' object has no attribute '_dict__'
+2024-06-03 15:11:59,492: root: ERROR: Traceback (most recent call last):
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/lumibot/strategies/strategy_executor.py", line 829, in run
+    self._run_trading_session()
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/lumibot/strategies/strategy_executor.py", line 780, in _run_trading_session
+    self._on_trading_iteration()
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/lumibot/strategies/strategy_executor.py", line 274, in func_output
+    result = func_input(self, *args, **kwargs)
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/lumibot/strategies/strategy_executor.py", line 298, in func_output
+    result = func_input(self, *args, **kwargs)
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/lumibot/strategies/strategy_executor.py", line 87, in func_output
+    return func_input(self, *args, **kwargs)
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/lumibot/strategies/strategy_executor.py", line 378, in _on_trading_iteration
+    on_trading_iteration()
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/lumibot/tools/decorators.py", line 62, in func_output
+    frame, result = call_function_get_frame(func_input, *args, **kwargs)
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/lumibot/tools/decorators.py", line 30, in call_function_get_frame
+    result = func(*args, **kwargs)
+  File "/workspaces/codespaces-blank/main.py", line 47, in on_trading_iteration
+    news=self.get_news()
+  File "/workspaces/codespaces-blank/main.py", line 40, in get_news
+    news =[ev._dict__["_raw"]["headline"]for ev in news ]
+  File "/workspaces/codespaces-blank/main.py", line 40, in <listcomp>
+    news =[ev._dict__["_raw"]["headline"]for ev in news ]
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/alpaca_trade_api/entity.py", line 29, in __getattr__
+    return super().__getattribute__(key)
+AttributeError: 'NewsV2' object has no attribute '_dict__'. Did you mean: '__dict__'?
+
+2024-06-03 15:11:59,494: root: INFO: MLTrader : Executing the on_bot_crash event method
+2024-06-03 15:11:59,501: root: INFO: Backtesting finished
+2024-06-03 15:11:59,502: root: WARNING: Cannot plot returns because the strategy returns are missing
+2024-06-03 15:11:59,601: root: WARNING: Cannot create a tearsheet because the strategy returns are missing
+2024-06-03 15:11:59,601: backtest_stats: INFO: Backtest took 0:00:01.535658 for a speed of 0.000
